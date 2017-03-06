@@ -4,14 +4,14 @@ const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 const getNoteForKey = (key, fretNumber) =>
   NOTES[(NOTES.indexOf(key) + fretNumber) % NOTES.length];
 
-const FRET_NUMBER_PATTERN = /(?:\||-)(\d+)(?=\||-)/g;
+const FRET_NUMBER_PATTERN = /\d+/g;
 const extractNotesFromLine = line => {
   const key = line.charAt(0);
   const notes = [];
   let fretNumber;
   while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
     notes.push({
-      name: getNoteForKey(key, Number(fretNumber[1])),
+      name: getNoteForKey(key, Number(fretNumber[0])),
       index: fretNumber.index,
     });
   }
