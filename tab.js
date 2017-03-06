@@ -4,6 +4,7 @@ const FRET_NUMBER_PATTERN = /\d+/g
 const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 /*
+  The default tuning for E4 is (NOTES.length * 4) + NOTES.indexOf('E')
   E4 = (12 * 4) + 4  = 52
   B3 = (12 * 3) + 11 = 47
   G3 = (12 * 3) + 7  = 43
