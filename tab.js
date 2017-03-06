@@ -3,13 +3,19 @@ const fs = require('fs')
 const FRET_NUMBER_PATTERN = /\d+/g
 const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
-// E4, B3, G3, D3, A2, E2
-// e.g. E4 = (12 * 4) + 4 = 40
-const DEFAULT_TUNING = [40, 35, 31, 26, 21, 16];
+/*
+  E4 = (12 * 4) + 4  = 52
+  B3 = (12 * 3) + 11 = 47
+  G3 = (12 * 3) + 7  = 43
+  D3 = (12 * 3) + 2  = 38
+  A2 = (12 * 2) + 9  = 33
+  E2 = (12 * 2) + 4  = 28
+*/
+const DEFAULT_TUNING = [52, 47, 43, 38, 33, 28]
 
 const getNote = (stringTuning, fretNumber) => {
   const note = NOTES[(stringTuning + fretNumber) % NOTES.length]
-  const octave = Math.floor((stringTuning + fretNumber) / NOTES.length) + 1
+  const octave = Math.floor((stringTuning + fretNumber) / NOTES.length)
   return `${note}${octave}`
 }
 
