@@ -23,10 +23,10 @@ const getNote = (stringTuning, fretNumber) => {
 const extractNotesFromLine = (line, index) => {
   const notes = []
   let fretNumber
-  while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
+  while ((fretNumber = FRET_NUMBER_PATTERN.exec(line))) {
     notes.push({
       name: getNote(DEFAULT_TUNING[index], Number(fretNumber[0])),
-      pos: fretNumber.index,
+      pos: fretNumber.index
     })
   }
   return notes
@@ -35,8 +35,12 @@ const extractNotesFromLine = (line, index) => {
 const getLinesFromFile = path => fs.readFileSync(path, 'utf-8').split('\n')
 
 console.log(
-  getLinesFromFile('./bonusInput.txt')
-    .reduce((notes, line, lineIndex) => notes.concat(extractNotesFromLine(line, lineIndex)), [])
+  getLinesFromFile('test_fixtures/bonusInput.txt')
+    .reduce(
+      (notes, line, lineIndex) =>
+        notes.concat(extractNotesFromLine(line, lineIndex)),
+      []
+    )
     .sort((a, b) => a.pos - b.pos)
     .map(n => n.name)
     .join(' ')

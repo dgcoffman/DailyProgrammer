@@ -1,0 +1,22 @@
+{
+  "name": "tab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tab.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgcoffman/DailyProgrammer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgcoffman/DailyProgrammer/issues"
+  },
+  "homepage": "https://github.com/dgcoffman/DailyProgrammer#readme",
+  "dependencies": {
+    "eslint": "^3.17.1"
+  }
+}
