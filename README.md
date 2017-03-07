@@ -1,4 +1,4 @@
-DailyProgrammer challenges
+Thoroughly over-engineered daily programmer challenge
 
 Run:
   - yarn tab

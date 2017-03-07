@@ -12,6 +12,9 @@ rules:
   semi:
     - error
     - never
+  flowtype/semi:
+    - error
+    - never
   no-console: off
   comma-dangle:
     - error
