@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dgcoffman/DailyProgrammer.git"
   },
-  "author": "",
+  "author": "Daniel Coffman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dgcoffman/DailyProgrammer/issues"
