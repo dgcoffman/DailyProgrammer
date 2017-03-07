@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "lint": "node_modules/eslint/bin/eslint.js src/",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "build": "babel src -d lib",
+    "tab": "yarn build && node lib/main.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,11 @@
     "url": "https://github.com/dgcoffman/DailyProgrammer/issues"
   },
   "homepage": "https://github.com/dgcoffman/DailyProgrammer#readme",
+  "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.2.1",
     "eslint": "^3.17.1",
     "jest": "^19.0.2",
     "lint-staged": "^3.3.1",

@@ -1,8 +1,8 @@
 env:
   node: true
-  commonjs: true
   es6: true
   jest: true
+parser: 'babel-eslint'
 extends: 'eslint:recommended'
 rules:
   semi:
@@ -15,5 +15,5 @@ rules:
       objects: always-multiline
       imports: always-multiline
       exports: always-multiline
-      functions: never
+      functions: always-multiline
   no-cond-assign: off
