@@ -34,8 +34,8 @@ const extractNotesFromLine = (line, index) => {
 
 const getLinesFromFile = path => fs.readFileSync(path, 'utf-8').split('\n')
 
-console.log(
-  getLinesFromFile('test_fixtures/bonusInput.txt')
+module.exports = filePath =>
+  getLinesFromFile(filePath)
     .reduce(
       (notes, line, lineIndex) =>
         notes.concat(extractNotesFromLine(line, lineIndex)),
@@ -44,4 +44,3 @@ console.log(
     .sort((a, b) => a.pos - b.pos)
     .map(n => n.name)
     .join(' ')
-)

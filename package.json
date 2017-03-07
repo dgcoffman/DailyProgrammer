@@ -4,7 +4,7 @@
   "description": "",
   "main": "tab.js",
   "scripts": {
-    "test": "node tab.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dgcoffman/DailyProgrammer#readme",
   "devDependencies": {
-    "eslint": "^3.17.1"
+    "eslint": "^3.17.1",
+    "jest": "^19.0.2"
   }
 }
