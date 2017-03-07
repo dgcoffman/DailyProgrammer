@@ -10,10 +10,10 @@ import fs from 'fs'
   A2 = (12 * 2) + 9  = 33
   E2 = (12 * 2) + 4  = 28
 */
-const DEFAULT_TUNING = [52, 47, 43, 38, 33, 28]
-const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
-const FRET_NUMBER_PATTERN = /\d+/g
+const DEFAULT_TUNING: number[] = [52, 47, 43, 38, 33, 28]
+const FRET_NUMBER_PATTERN: RegExp = /\d+/g
 
+const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 const getNote = (stringTuning: number, fretNumber: number): string => {
   const note = NOTES[(stringTuning + fretNumber) % NOTES.length]
   const octave = Math.floor((stringTuning + fretNumber) / NOTES.length)
@@ -21,8 +21,8 @@ const getNote = (stringTuning: number, fretNumber: number): string => {
 }
 
 type Note = {name: string, pos: number}
-const extractNotesFromLine = (line: string, index: number): Array<Note> => {
-  const notes: Array<Note> = []
+const extractNotesFromLine = (line: string, index: number): Note[] => {
+  const notes: Note[] = []
   let fretNumber
   while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
     notes.push({
@@ -33,7 +33,7 @@ const extractNotesFromLine = (line: string, index: number): Array<Note> => {
   return notes
 }
 
-const getLinesFromFile = (path: string): Array<string> =>
+const getLinesFromFile = (path: string): string[] =>
   fs.readFileSync(path, 'utf-8').split('\n')
 
 export default (filePath: string): string =>
