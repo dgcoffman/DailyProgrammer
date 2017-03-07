@@ -26,7 +26,7 @@ const extractNotesFromLine = (line, index) => {
   while ((fretNumber = FRET_NUMBER_PATTERN.exec(line))) {
     notes.push({
       name: getNote(DEFAULT_TUNING[index], Number(fretNumber[0])),
-      pos: fretNumber.index
+      pos: fretNumber.index,
     })
   }
   return notes

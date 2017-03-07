@@ -16,7 +16,7 @@
     "url": "https://github.com/dgcoffman/DailyProgrammer/issues"
   },
   "homepage": "https://github.com/dgcoffman/DailyProgrammer#readme",
-  "dependencies": {
+  "devDependencies": {
     "eslint": "^3.17.1"
   }
 }
