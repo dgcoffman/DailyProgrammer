@@ -8,7 +8,8 @@
     "lint": "node_modules/eslint/bin/eslint.js src/",
     "lint-staged": "lint-staged",
     "build": "babel src -d lib",
-    "tab": "yarn build && node lib/main.js"
+    "tab": "yarn build && node lib/main.js",
+    "flow": "node_modules/flow-bin/flow-osx-v0.41.0/flow; test $? -eq 0 -o $? -eq 2"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,11 @@
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-env": "^1.2.1",
     "eslint": "^3.17.1",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "flow-bin": "^0.41.0",
     "jest": "^19.0.2",
     "lint-staged": "^3.3.1",
     "pre-commit": "^1.2.2"

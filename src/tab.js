@@ -1,3 +1,4 @@
+// @flow
 import fs from 'fs'
 
 /*
@@ -13,13 +14,13 @@ const DEFAULT_TUNING = [52, 47, 43, 38, 33, 28]
 const NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 const FRET_NUMBER_PATTERN = /\d+/g
 
-const getNote = (stringTuning, fretNumber) => {
+const getNote = (stringTuning: number, fretNumber: number): string => {
   const note = NOTES[(stringTuning + fretNumber) % NOTES.length]
   const octave = Math.floor((stringTuning + fretNumber) / NOTES.length)
   return `${note}${octave}`
 }
 
-const extractNotesFromLine = (line, index) => {
+const extractNotesFromLine = (line: string, index: number): Array<Object> => {
   const notes = []
   let fretNumber
   while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
@@ -31,9 +32,10 @@ const extractNotesFromLine = (line, index) => {
   return notes
 }
 
-const getLinesFromFile = path => fs.readFileSync(path, 'utf-8').split('\n')
+const getLinesFromFile = (path: string): Array<string> =>
+  fs.readFileSync(path, 'utf-8').split('\n')
 
-export default filePath =>
+export default (filePath: string) =>
   getLinesFromFile(filePath)
     .reduce(
       (notes, line, lineIndex) =>
