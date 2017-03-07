@@ -1,5 +1,5 @@
 env:
-  browser: true
+  node: true
   commonjs: true
   es6: true
 extends: 'eslint:recommended'
@@ -8,3 +8,11 @@ rules:
     - error
     - never
   no-console: off
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: never
+  no-cond-assign: off

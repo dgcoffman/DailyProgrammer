@@ -23,7 +23,7 @@ const getNote = (stringTuning, fretNumber) => {
 const extractNotesFromLine = (line, index) => {
   const notes = []
   let fretNumber
-  while ((fretNumber = FRET_NUMBER_PATTERN.exec(line))) {
+  while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
     notes.push({
       name: getNote(DEFAULT_TUNING[index], Number(fretNumber[0])),
       pos: fretNumber.index,
