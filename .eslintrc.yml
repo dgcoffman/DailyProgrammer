@@ -2,12 +2,12 @@ env:
   node: true
   es6: true
   jest: true
-parser: 'babel-eslint'
+parser: babel-eslint
 plugins:
   - flowtype
 extends:
-  - 'eslint:recommended'
-  - 'plugin:flowtype/recommended'
+  - eslint:recommended
+  - plugin:flowtype/recommended
 rules:
   semi:
     - error
@@ -18,9 +18,5 @@ rules:
   no-console: off
   comma-dangle:
     - error
-    - arrays: always-multiline
-      objects: always-multiline
-      imports: always-multiline
-      exports: always-multiline
-      functions: always-multiline
+    - always-multiline
   no-cond-assign: off
