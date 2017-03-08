@@ -23,6 +23,9 @@ const getNote = (stringTuning: number, fretNumber: number): string => {
 type Note = {name: string, pos: number}
 const extractNotesFromLine = (line: string, index: number): Note[] => {
   const notes: Note[] = []
+
+  // https://github.com/tc39/String.prototype.matchAll
+  // Stage 1 ECMA Proposal could replace this RexExp.exec loop
   let fretNumber
   while (fretNumber = FRET_NUMBER_PATTERN.exec(line)) {
     notes.push({
@@ -30,6 +33,7 @@ const extractNotesFromLine = (line: string, index: number): Note[] => {
       pos: fretNumber.index,
     })
   }
+
   return notes
 }
 
